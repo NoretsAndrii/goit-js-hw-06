@@ -12,6 +12,17 @@ class Storage {
   addItem(newItem) {
     this.#items.push(newItem);
   }
+
+  removeItem(itemToRemove) {
+    // if (this.#items.includes(itemToRemove)) {
+    //   const indexItemToRemove = this.#items.indexOf(itemToRemove);
+    //   this.#items.splice(indexItemToRemove, 1);
+    // }
+    const indexItemToRemove = this.#items.indexOf(itemToRemove);
+    if (indexItemToRemove !== -1) {
+      this.#items.splice(indexItemToRemove, 1);
+    }
+  }
 }
 
 const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
